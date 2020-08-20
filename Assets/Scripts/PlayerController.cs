@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,14 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed;
 
     private Vector3 firstTouchForwardDirection;
+
+    private Rigidbody _rigidbody;
+
+    private void Awake()
+    {
+        _rigidbody = transform.GetComponent<Rigidbody>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +37,7 @@ public class PlayerController : MonoBehaviour
 
             HandleRotation();
             
-            transform.position += transform.forward * movementSpeed;    // Forward movement while holding.
-            
+            HandleMovement();
         }
         
         
@@ -41,20 +49,10 @@ public class PlayerController : MonoBehaviour
         var angleDifference = (InputManager.Instance.LastTouchPosition.x - InputManager.Instance.FirstTouchPosition.x) / 4f;
         
         transform.forward = Quaternion.Euler(0, angleDifference, 0) * firstTouchForwardDirection;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-    
+
+    public void HandleMovement()
+    {
+        transform.position += transform.forward * movementSpeed;    // Forward movement while holding.
+    }
 }

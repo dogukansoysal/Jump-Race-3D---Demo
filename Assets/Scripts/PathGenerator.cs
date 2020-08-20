@@ -2,17 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using PathCreation;
 using UnityEngine;
 
 [ExecuteInEditMode]
 public class PathGenerator : MonoBehaviour
 {
     public GameObject JumpingPadPrefab;
-    private VertexPath path;
 
     public void GeneratePath()
-    {
+    {/*
         path = transform.GetComponent<PathCreator>().path;
         ClearPath();
         for (var i = 0; i < path.NumPoints; i++)
@@ -21,7 +19,7 @@ public class PathGenerator : MonoBehaviour
 
             var tempJumpingPad = Instantiate(JumpingPadPrefab, transform, true);
             tempJumpingPad.transform.position = path.localPoints[i];
-        }
+        }*/
     }
 
     private void ClearPath()
