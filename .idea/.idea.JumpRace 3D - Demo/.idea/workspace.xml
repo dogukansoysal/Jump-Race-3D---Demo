@@ -12,15 +12,24 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Utils/UOUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Bezier/CubicBezierCurve.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Bezier/SplineNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Example/ExampleSower.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Bezier/CurveSample.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Bezier/Spline.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Editor/SplineEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Editor/SplineExtrusionEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/581C017B-D0EA-43F9-BB08-2B3F4C940D2A/a2/97a534af/Handles.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/PathGeneratorEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/MeshProcessing/SplineMeshTiling.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameConstants.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/MeshProcessing/SourceMesh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/JumpingPad.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Example/ExampleSower.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -28,14 +37,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameConstants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/JumpingPad.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/PathCreator/Examples/Scripts/RoadMeshCreator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RoadGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/PathGeneratorEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/Example/ExampleSower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/JumpingPad.cs" />
+        <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/Example/ExampleSower.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/PathGeneratorEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/Editor/SplineEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Bezier3D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/MeshProcessing/SplineMeshTiling.cs" />
       </list>
     </option>
   </component>
@@ -78,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597652407685</updated>
       <workItem from="1597652471172" duration="14683000" />
-      <workItem from="1597834398159" duration="9457000" />
+      <workItem from="1597834398159" duration="20219000" />
     </task>
     <servers />
   </component>
@@ -99,9 +111,13 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597750680459">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1598002412559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597750680459" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598002412559" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597942017548">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597942017548" />
   </component>
 </project>
