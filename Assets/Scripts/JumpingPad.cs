@@ -13,19 +13,19 @@ public class JumpingPad : MonoBehaviour
     /// </summary>
     /// TODO: Move this method to the GameConstants static class or make it static for future work.
     /// <param name="collision"></param>
-    public void Bounce(Collision collision)
+    public void Bounce(Collider collider)
     {
-        collision.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        collision.transform.GetComponent<Rigidbody>().AddForce(Vector3.Reflect(Vector3.down, 
-                collision.contacts[0].normal) * BounceMagnitude,   
+        collider.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        collider.transform.GetComponent<Rigidbody>().AddForce( Vector3.up * BounceMagnitude,   
             ForceMode.Impulse);
     }
 
-    public void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider collider)
     {
-        if (other.transform.CompareTag("Player"))
+        if (collider.transform.CompareTag("Player"))
         {
-            Bounce(other);
+            Debug.Log("a");
+            Bounce(collider);
         }
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine;
 [CustomEditor(typeof(PathGenerator))]
 public class PathGeneratorEditor : Editor
 {
+/*
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
@@ -17,4 +18,5 @@ public class PathGeneratorEditor : Editor
             pathGeneratorScript.GeneratePath();
         }
     }
+*/
 }

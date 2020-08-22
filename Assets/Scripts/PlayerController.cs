@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public float movementSpeed;
 
+    public float FallMultiplier;
+    
     private Vector3 firstTouchForwardDirection;
 
     private Rigidbody _rigidbody;
@@ -39,13 +41,16 @@ public class PlayerController : MonoBehaviour
             
             HandleMovement();
         }
-        
-        
-        
+    }
+
+    private void FixedUpdate()
+    {
+        BetterGravity();
     }
 
     public void HandleRotation()
     {
+        
         var angleDifference = (InputManager.Instance.LastTouchPosition.x - InputManager.Instance.FirstTouchPosition.x) / 4f;
         
         transform.forward = Quaternion.Euler(0, angleDifference, 0) * firstTouchForwardDirection;
@@ -54,5 +59,14 @@ public class PlayerController : MonoBehaviour
     public void HandleMovement()
     {
         transform.position += transform.forward * movementSpeed;    // Forward movement while holding.
+    }
+
+    public void BetterGravity()
+    {
+        if (_rigidbody.velocity.y < 0)
+        {
+            _rigidbody.velocity += Vector3.up * Physics.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
+        }
+        
     }
 }

@@ -74,7 +74,6 @@ namespace SplineMesh {
 
         public void CreateMeshes() {
             var used = new List<GameObject>();
-
             if (curveSpace) {
                 int i = 0;
                 foreach (var curve in spline.curves) {
