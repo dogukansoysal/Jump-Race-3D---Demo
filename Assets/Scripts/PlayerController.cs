@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float movementSpeed;
+    public float MaxMovementSpeed;
 
     public float FallMultiplier;
     
@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
+    private float currentMovementSpeed;
     private void Awake()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
@@ -25,48 +26,65 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        BetterGravity();
+
         if(GameManager.Instance.GameState != GameConstants.GameState.Playable) return;
-        var isFirstTouch = InputManager.Instance.InputState == GameConstants.InputState.FirstTouch;
         
-        if (InputManager.Instance.InputState == GameConstants.InputState.Hold || isFirstTouch)
+        if (InputManager.Instance.InputState == GameConstants.InputState.Hold || InputManager.Instance.InputState == GameConstants.InputState.FirstTouch)
         {
-            if (isFirstTouch)
+            if (firstTouchForwardDirection == Vector3.zero)
             {
+                Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaa");
                 firstTouchForwardDirection = transform.forward;
             }
+            else
+            {
+                HandleRotation();
+            }
 
-            HandleRotation();
+            currentMovementSpeed += 80f * Time.deltaTime;
+            currentMovementSpeed = Mathf.Clamp(currentMovementSpeed, 0f, MaxMovementSpeed);
             
             HandleMovement();
         }
-    }
-
-    private void FixedUpdate()
-    {
-        BetterGravity();
-    }
-
-    public void HandleRotation()
-    {
+        else if (InputManager.Instance.InputState == GameConstants.InputState.Released || InputManager.Instance.InputState == GameConstants.InputState.None)
+        {
+            ResetVelocity();
+        }
         
-        var angleDifference = (InputManager.Instance.LastTouchPosition.x - InputManager.Instance.FirstTouchPosition.x) / 4f;
+    }
+
+    private void HandleRotation()
+    {
+        if(firstTouchForwardDirection == Vector3.zero) return;
+        
+        var angleDifference = (InputManager.Instance.LastTouchPosition.x - InputManager.Instance.FirstTouchPosition.x) / 5f;
         
         transform.forward = Quaternion.Euler(0, angleDifference, 0) * firstTouchForwardDirection;
     }
 
-    public void HandleMovement()
+    private void HandleMovement()
     {
-        transform.position += transform.forward * movementSpeed;    // Forward movement while holding.
+        //transform.position += transform.forward * movementSpeed;    // Forward movement while holding.
+        
+        _rigidbody.velocity = new Vector3(transform.forward.x * currentMovementSpeed, _rigidbody.velocity.y, transform.forward.z * currentMovementSpeed);
     }
 
-    public void BetterGravity()
+    private void BetterGravity()
     {
         if (_rigidbody.velocity.y < 0)
         {
             _rigidbody.velocity += Vector3.up * Physics.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
         }
-        
+    }
+
+    private void ResetVelocity()
+    {
+        _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+        _rigidbody.angularVelocity = Vector3.zero;
+        currentMovementSpeed = 0;
+        firstTouchForwardDirection = Vector3.zero;
     }
 }

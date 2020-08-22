@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameState = GameState.Menu;
     }
 
     // Update is called once per frame
@@ -31,8 +31,41 @@ public class GameManager : MonoBehaviour
     }
 
 
+    #region Game Event Management
 
+    public void Play()
+    {
+        GameState = GameState.Playable;
+        UIController.Instance.ShowPanel(1);
+    }
 
+    public void Pause()
+    {
+        // TODO: Add a pause option.
+    }
+
+    public void Success()
+    {
+        GameState = GameState.Menu;
+        UIController.Instance.ShowPanel(2);
+    }
+
+    public void Fail()
+    {
+        GameState = GameState.Menu;
+        UIController.Instance.ShowPanel(3);
+    }
+
+    #endregion
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     /// <summary>
     /// All scene changing methods will be listed in here.

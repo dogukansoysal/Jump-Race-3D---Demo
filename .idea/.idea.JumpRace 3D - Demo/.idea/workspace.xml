@@ -35,19 +35,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/GameConstants.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/PathCreator/Examples/Scripts/RoadMeshCreator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RoadGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/JumpingPad.cs" />
         <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/Example/ExampleSower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/PathGeneratorEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/Editor/SplineEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bezier3D.cs" />
         <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/MeshProcessing/SplineMeshTiling.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/JumpingPad.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -91,7 +91,7 @@
       <updated>1597652407685</updated>
       <workItem from="1597652471172" duration="14683000" />
       <workItem from="1597834398159" duration="26500000" />
-      <workItem from="1598087795521" duration="1131000" />
+      <workItem from="1598087795521" duration="8682000" />
     </task>
     <servers />
   </component>
@@ -118,9 +118,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598002412559" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597942017548">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598097334384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597942017548" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598097334384" />
   </component>
 </project>

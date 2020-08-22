@@ -67,8 +67,7 @@ public class UIController : MonoBehaviour
 
     public void PlayButtonClick()
     {
-        GameManager.Instance.GameState = GameConstants.GameState.Playable;
-        ShowPanel(1);
+        GameManager.Instance.Play();
     }
 
     public void NextLevelButtonClick()
@@ -78,6 +77,8 @@ public class UIController : MonoBehaviour
 
     private void SetLevelText(Component component)
     {
+        if (component == null) return;
+        
         var levelIndex = GameManager.Instance.GetCurrentSceneIndex() - 2;
         if (levelIndex == 0)
         {
@@ -92,7 +93,8 @@ public class UIController : MonoBehaviour
     
     private void HandleScaleTween(Component scaleTween)
     {
-        scaleTween.GetComponent<RectTransform>().DOSizeDelta(scaleTween.GetComponent<RectTransform>().sizeDelta * 1.2f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+        if(scaleTween)
+            scaleTween.GetComponent<RectTransform>().DOSizeDelta(scaleTween.GetComponent<RectTransform>().sizeDelta * 1.2f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
         //CompleteImage.GetComponent<RectTransform>().DOSizeDelta(CompleteImage.GetComponent<RectTransform>().sizeDelta * 1.05f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
     }
     

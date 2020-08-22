@@ -24,7 +24,6 @@ public class JumpingPad : MonoBehaviour
     {
         if (collider.transform.CompareTag("Player"))
         {
-            Debug.Log("a");
             Bounce(collider);
         }
     }
