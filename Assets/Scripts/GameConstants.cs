@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public static class GameConstants
@@ -67,6 +68,20 @@ public static class GameConstants
     
     
     
+    #region UI_Tweens
+    
+    public static void HandleScaleTween(Component scaleTween)
+    {
+        if (scaleTween)
+        {
+            scaleTween.GetComponent<RectTransform>().DOScale(scaleTween.GetComponent<RectTransform>().localScale * 1.2f, 0.75f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutCubic);
+        }
+        //CompleteImage.GetComponent<RectTransform>().DOSizeDelta(CompleteImage.GetComponent<RectTransform>().sizeDelta * 1.05f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+    }
+    
+    #endregion
+    
+    
     
     // Common static functions.
     #region Functions
@@ -115,4 +130,5 @@ public static class GameConstants
     }
     #endregion
     
+   
 }

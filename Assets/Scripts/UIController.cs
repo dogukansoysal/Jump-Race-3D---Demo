@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static GameConstants;
 
 public class UIController : MonoBehaviour
 {
@@ -17,16 +18,16 @@ public class UIController : MonoBehaviour
     
 
     // Main Menu
-    public TextMeshProUGUI TopToPlayTextMenu;
-    public TextMeshProUGUI LevelTextMenu;
+    public GameObject TopToPlayTextMenu;
+    public GameObject LevelTextMenu;
 
     // In Game
-    public TextMeshProUGUI LevelTextInGame;
-    public TextMeshProUGUI AnimationNameTextInGame;
+    public GameObject LevelTextInGame;
+    public GameObject AnimationNameTextInGame;
     
     // Success
-    public TextMeshProUGUI LevelTextSuccess;
-    public TextMeshProUGUI NextLevelTextSuccess;
+    public GameObject LevelTextSuccess;
+    public GameObject NextLevelTextSuccess;
 
     void Awake()
     {
@@ -37,12 +38,12 @@ public class UIController : MonoBehaviour
     
     public void Start()
     {
-        HandleScaleTween(TopToPlayTextMenu);
-        HandleScaleTween(NextLevelTextSuccess);
+        HandleScaleTween(TopToPlayTextMenu.GetComponent<RectTransform>());
+        HandleScaleTween(NextLevelTextSuccess.GetComponent<RectTransform>());
         
-        SetLevelText(LevelTextMenu);
-        SetLevelText(LevelTextInGame);
-        SetLevelText(LevelTextSuccess);
+        SetLevelText(LevelTextMenu.GetComponent<TextMeshProUGUI>());
+        SetLevelText(LevelTextInGame.GetComponent<TextMeshProUGUI>());
+        SetLevelText(LevelTextSuccess.GetComponent<TextMeshProUGUI>());
 
         ShowPanel(0);
     }
@@ -90,15 +91,8 @@ public class UIController : MonoBehaviour
             component.GetComponent<TextMeshProUGUI>().text = "LEVEL " + (SceneManager.GetActiveScene().buildIndex - 2);
         }
     }
-    
-    private void HandleScaleTween(Component scaleTween)
-    {
-        if(scaleTween)
-            scaleTween.GetComponent<RectTransform>().DOSizeDelta(scaleTween.GetComponent<RectTransform>().sizeDelta * 1.2f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
-        //CompleteImage.GetComponent<RectTransform>().DOSizeDelta(CompleteImage.GetComponent<RectTransform>().sizeDelta * 1.05f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
-    }
-    
-    
+
+
     /*
     public void ShowAnimationNamePanel()
     {
