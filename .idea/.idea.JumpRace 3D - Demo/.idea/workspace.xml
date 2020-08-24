@@ -18,6 +18,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/581C017B-D0EA-43F9-BB08-2B3F4C940D2A/a2/97a534af/Handles.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/PathGeneratorEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GuideLaser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/Bezier/SplineNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SplineMesh/Scripts/MeshProcessing/SplineMeshTiling.cs" root0="FORCE_HIGHLIGHTING" />
@@ -43,12 +44,13 @@
         <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/Editor/SplineEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bezier3D.cs" />
         <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/MeshProcessing/SplineMeshTiling.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/JumpingPad.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameConstants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GuideLaser.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/JumpingPad.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -93,7 +95,7 @@
       <workItem from="1597652471172" duration="14683000" />
       <workItem from="1597834398159" duration="26500000" />
       <workItem from="1598087795521" duration="8682000" />
-      <workItem from="1598218474751" duration="4389000" />
+      <workItem from="1598218474751" duration="7894000" />
     </task>
     <servers />
   </component>

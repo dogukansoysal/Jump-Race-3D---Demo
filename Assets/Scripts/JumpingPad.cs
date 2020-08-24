@@ -18,6 +18,7 @@ public class JumpingPad : MonoBehaviour
         collider.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
         collider.transform.GetComponent<Rigidbody>().AddForce( Vector3.up * BounceMagnitude,   
             ForceMode.Impulse);
+        collider.transform.GetComponent<PlayerController>().HandleBounce();
     }
 
     public void OnTriggerEnter(Collider collider)

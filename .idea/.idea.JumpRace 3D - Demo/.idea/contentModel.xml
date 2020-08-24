@@ -38,6 +38,7 @@
           </e>
           <e p="GameConstants.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="GuideLaser.cs" t="Include" />
           <e p="InputManager.cs" t="Include" />
           <e p="JumpingPad.cs" t="Include" />
           <e p="PathGenerator.cs" t="Include" />

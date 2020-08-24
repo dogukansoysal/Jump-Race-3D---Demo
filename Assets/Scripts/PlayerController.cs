@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,11 +13,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 firstTouchForwardDirection;
 
     private Rigidbody _rigidbody;
-
+    private Animator _animator;
     private float currentMovementSpeed;
     private void Awake()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
+        _animator = transform.GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -36,7 +38,6 @@ public class PlayerController : MonoBehaviour
         {
             if (firstTouchForwardDirection == Vector3.zero)
             {
-                Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaa");
                 firstTouchForwardDirection = transform.forward;
             }
             else
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
                 HandleRotation();
             }
 
-            currentMovementSpeed += 80f * Time.deltaTime;
+            currentMovementSpeed += 60f * Time.deltaTime;
             currentMovementSpeed = Mathf.Clamp(currentMovementSpeed, 0f, MaxMovementSpeed);
             
             HandleMovement();
@@ -54,6 +55,18 @@ public class PlayerController : MonoBehaviour
             ResetVelocity();
         }
         
+    }
+
+    public void HandleBounce()
+    {
+        if (Random.Range(0, 2) % 2 == 0)
+        {
+            _animator.SetTrigger("Jump");
+        }
+        else
+        {
+            _animator.SetTrigger("Backflip");
+        }
     }
 
     private void HandleRotation()
