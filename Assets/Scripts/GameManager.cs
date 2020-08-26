@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;    // Singleton pattern **Instance**
     public GameState GameState;
 
-    //public int totalJumpingPadCount;
-    
     private void Awake()
     {
         if (Instance != null)
@@ -24,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameState = GameState.Menu;
+        
     }
 
     // Update is called once per frame

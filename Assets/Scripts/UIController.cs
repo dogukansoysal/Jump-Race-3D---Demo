@@ -39,11 +39,12 @@ public class UIController : MonoBehaviour
     public void Start()
     {
         HandleScaleTween(TopToPlayTextMenu.GetComponent<RectTransform>());
-        HandleScaleTween(NextLevelTextSuccess.GetComponent<RectTransform>());
         
-        SetLevelText(LevelTextMenu.GetComponent<TextMeshProUGUI>());
-        SetLevelText(LevelTextInGame.GetComponent<TextMeshProUGUI>());
-        SetLevelText(LevelTextSuccess.GetComponent<TextMeshProUGUI>());
+        //HandleScaleTween(NextLevelTextSuccess.GetComponent<RectTransform>());
+        
+        //SetLevelText(LevelTextMenu.GetComponent<TextMeshProUGUI>());
+        //SetLevelText(LevelTextInGame.GetComponent<TextMeshProUGUI>());
+        //SetLevelText(LevelTextSuccess.GetComponent<TextMeshProUGUI>());
 
         ShowPanel(0);
     }

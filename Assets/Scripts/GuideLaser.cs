@@ -15,12 +15,12 @@ public class GuideLaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lr.SetPosition(0, transform.position);
+        lr.SetPosition(0, new Vector3(0, 0.5f, 0));
         if (Physics.Raycast(transform.position, -transform.up, out hit))
         {
             if (hit.collider.CompareTag("JumpingPad"))
             {
-                lr.SetPosition(1,hit.point);
+                lr.SetPosition(1,transform.InverseTransformPoint(hit.point));
                 lr.material.color = Color.green;
 
             }
@@ -28,14 +28,18 @@ public class GuideLaser : MonoBehaviour
             {
                 lr.SetPosition(1, -transform.up * 100);
                 lr.material.color = Color.red;
-            
+                
+
             }
         }
         else
         {
-            lr.SetPosition(1, -transform.up * 5000);
+            lr.SetPosition(1, -transform.up * 100);
             lr.material.color = Color.red;
-            
         }
+        
+        var tempColor = lr.material.color;
+        tempColor.a = 0.5f;
+        lr.material.color = tempColor;
     }
 }

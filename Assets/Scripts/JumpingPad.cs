@@ -7,6 +7,7 @@ public class JumpingPad : MonoBehaviour
 {
     public int Health;
     public float BounceMagnitude;
+    public int Index;
     
     /// <summary>
     /// Generic bounce method for multiple purpose.
@@ -18,7 +19,6 @@ public class JumpingPad : MonoBehaviour
         collider.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
         collider.transform.GetComponent<Rigidbody>().AddForce( Vector3.up * BounceMagnitude,   
             ForceMode.Impulse);
-        collider.transform.GetComponent<PlayerController>().HandleBounce();
     }
 
     public void OnTriggerEnter(Collider collider)
@@ -26,6 +26,13 @@ public class JumpingPad : MonoBehaviour
         if (collider.transform.CompareTag("Player"))
         {
             Bounce(collider);
+            collider.transform.GetComponent<PlayerController>().HandleBounce();
+        }
+        else if (collider.transform.CompareTag("Enemy"))
+        {
+            Bounce(collider);
+            collider.transform.GetComponent<EnemyAI>().HandleBounce();
+
         }
     }
 }

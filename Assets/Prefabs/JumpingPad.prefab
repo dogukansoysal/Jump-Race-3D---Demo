@@ -329,7 +329,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 0
-  BounceMagnitude: 20
+  BounceMagnitude: 15
+  Index: 0
 --- !u!1 &6376594153410501071
 GameObject:
   m_ObjectHideFlags: 0
