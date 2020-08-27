@@ -32,16 +32,18 @@ public class PlayerController : MonoBehaviour
     {
         BetterGravity();
 
-        if(GameManager.Instance.GameState != GameConstants.GameState.Playable) return;
+        if(GameManager.Instance.GameState != GameConstants.GameState.Playable) return;    // Check if game is playable
 
+        // Check if the player's altitude is lower than the last jumping pad's altitude.
         if (transform.position.y < PathGenerator.Instance.FinishPad.transform.position.y)
         {
             GameManager.Instance.Fail();
         }
         
-        
+        // Control the Input state as touching or not
         if (InputManager.Instance.InputState == GameConstants.InputState.Hold || InputManager.Instance.InputState == GameConstants.InputState.FirstTouch)
         {
+            // If it's the first touch since user released, set the current direction as new forward direction to make rotations according to that direction.
             if (firstTouchForwardDirection == Vector3.zero)
             {
                 firstTouchForwardDirection = transform.forward;
@@ -51,6 +53,8 @@ public class PlayerController : MonoBehaviour
                 HandleRotation();
             }
 
+            // 60f is arbitrary acceleration value.
+            // TODO: Define acceleration variable.
             currentMovementSpeed += 60f * Time.deltaTime;
             currentMovementSpeed = Mathf.Clamp(currentMovementSpeed, 0f, MaxMovementSpeed);
             
@@ -63,6 +67,9 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Event Handler for the player when a bounce happens.
+    /// </summary>
     public void HandleBounce()
     {
         if (Random.Range(0, 2) % 2 == 0)

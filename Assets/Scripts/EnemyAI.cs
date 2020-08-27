@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.Instance.GameState != GameConstants.GameState.Playable) return;
+        if(GameManager.Instance.GameState != GameConstants.GameState.Playable) return;    // Check if game is playable
 
         if (Physics.Raycast(transform.position, -transform.up, out hit))
         {
@@ -62,16 +62,25 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Movement function according to direction.
+    /// </summary>
     private void HandleMovement()
     {
         _rigidbody.velocity = new Vector3(transform.forward.x * MovementSpeed, _rigidbody.velocity.y, transform.forward.z * MovementSpeed);
     }
 
+    /// <summary>
+    /// Set the forward direction to the target.
+    /// </summary>
     private void HandleRotation()
     {
         transform.LookAt(new Vector3(Target.transform.position.x, transform.position.y, Target.transform.position.z));
     }
 
+    /// <summary>
+    /// Event Handler for the player when a bounce happens.
+    /// </summary>
     public void HandleBounce()
     {
         if (Random.Range(0, 2) % 2 == 0)
