@@ -27,7 +27,18 @@ public class JumpingPad : MonoBehaviour
     {
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            transform.GetComponent<MeshCollider>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).GetComponent<MeshCollider>().enabled = false;
+
+            for (int i = 0; i < transform.GetChild(2).childCount; i++)
+            {
+                var childRb = transform.GetChild(2).GetChild(i).gameObject.AddComponent<Rigidbody>();
+                childRb.AddExplosionForce(1000f, transform.position + (transform.up * 10), 50f);
+                //childRb.AddForce(Vector3.down * 500);
+            }
+            
+            Destroy(gameObject, 5f);
             return;
         }
         
@@ -37,13 +48,25 @@ public class JumpingPad : MonoBehaviour
             {
                 Destroy(transform.GetChild(2).gameObject);
             }
-            var newModel = Instantiate(BreakableModels[Health - 1], transform);
-            newModel.transform.localScale = new Vector3(0.01f,0.1f,0.01f);
-            newModel.transform.localPosition = Vector3.zero + new Vector3(0,0,-1f);
-            
-            newModel.GetComponent<MeshRenderer>().sharedMaterial = transform.GetComponent<MeshRenderer>().material;
             transform.GetComponent<MeshRenderer>().enabled = false;
             transform.GetComponent<MeshFilter>().mesh = null;
+            
+            var newModel = Instantiate(BreakableModels[Health - 1], transform);
+            newModel.transform.localScale = new Vector3(0.01f,0.1f,0.01f);
+
+            if (Health - 1 > 0)
+            {
+                newModel.transform.localPosition = Vector3.zero + new Vector3(0,0,-1);
+                newModel.GetComponent<MeshRenderer>().sharedMaterial = transform.GetComponent<MeshRenderer>().material;
+            }
+            else
+            {
+                newModel.transform.localPosition = Vector3.zero + new Vector3(0,0,0);
+                for (int i = 0; i < newModel.transform.childCount; i++)
+                {
+                    newModel.transform.GetChild(i).GetComponent<MeshRenderer>().sharedMaterial = transform.GetComponent<MeshRenderer>().material;
+                }
+            }
         }
     }
     public void OnTriggerEnter(Collider collider)

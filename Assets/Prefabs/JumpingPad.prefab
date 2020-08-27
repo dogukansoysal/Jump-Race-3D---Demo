@@ -332,7 +332,7 @@ MonoBehaviour:
   BounceMagnitude: 15
   Index: 0
   BreakableModels:
-  - {fileID: -927199367670048503, guid: f78db1624b164294cbddd01ea3f21512, type: 3}
+  - {fileID: -927199367670048503, guid: 19ed7245f7cddc348a64ac97eb525211, type: 3}
   - {fileID: -927199367670048503, guid: ffba8a848c601074ebba53856e15c171, type: 3}
   - {fileID: -927199367670048503, guid: 23ffa38c7f3f2cb438636ec3f92c9720, type: 3}
 --- !u!1 &6376594153410501071
