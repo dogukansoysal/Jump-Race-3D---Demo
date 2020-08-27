@@ -46,13 +46,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Bezier3D.cs" />
         <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/MeshProcessing/SplineMeshTiling.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameConstants.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GuideLaser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/JumpingPad.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -98,7 +98,8 @@
       <workItem from="1597834398159" duration="26500000" />
       <workItem from="1598087795521" duration="8682000" />
       <workItem from="1598218474751" duration="9047000" />
-      <workItem from="1598427078165" duration="8885000" />
+      <workItem from="1598427078165" duration="9069000" />
+      <workItem from="1598519676249" duration="856000" />
     </task>
     <servers />
   </component>

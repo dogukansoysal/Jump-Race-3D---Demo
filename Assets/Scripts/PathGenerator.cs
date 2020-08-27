@@ -31,6 +31,7 @@ public class PathGenerator : MonoBehaviour
     public List<Material> Materials;
 
     public List<GameObject> JumpingPads;
+    public GameObject FinishPad;
     private void Awake()
     {
         if (Instance != null)
@@ -142,10 +143,25 @@ public class PathGenerator : MonoBehaviour
             JumpingPads.Add(go);
         }
         
+        SetFinishZone();
+        
         //DrawPathLine();
-
     }
 
+    /// <summary>
+    /// Last jumping pad will be changed as finish zone.
+    /// </summary>
+    private void SetFinishZone()
+    {
+        FinishPad = JumpingPads[JumpingPads.Count - 1];
+        DestroyImmediate(FinishPad.GetComponent<JumpingPad>());
+        FinishPad.transform.GetChild(0).GetComponent<TextMeshPro>().text = "";
+        FinishPad.transform.GetChild(1).tag = "Finish";
+        FinishPad.transform.localScale = new Vector3(FinishPad.transform.localScale.x * 2f, FinishPad.transform.localScale.y, FinishPad.transform.localScale.z * 2f);
+        
+    }
+    
+    
     /// <summary>
     /// A Guide Line for player to follow the current path
     /// </summary>

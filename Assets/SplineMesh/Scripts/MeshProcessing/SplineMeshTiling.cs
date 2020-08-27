@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace SplineMesh {
     /// <summary>
@@ -111,6 +112,7 @@ namespace SplineMesh {
             } else {
                 res = childTransform.gameObject;
             }
+            res.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
             res.GetComponent<MeshRenderer>().material = material;
             res.GetComponent<MeshCollider>().material = physicMaterial;
             MeshBender mb = res.GetComponent<MeshBender>();

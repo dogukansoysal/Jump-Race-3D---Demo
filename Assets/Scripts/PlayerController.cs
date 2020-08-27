@@ -33,6 +33,12 @@ public class PlayerController : MonoBehaviour
         BetterGravity();
 
         if(GameManager.Instance.GameState != GameConstants.GameState.Playable) return;
+
+        if (transform.position.y < PathGenerator.Instance.FinishPad.transform.position.y)
+        {
+            GameManager.Instance.Fail();
+        }
+        
         
         if (InputManager.Instance.InputState == GameConstants.InputState.Hold || InputManager.Instance.InputState == GameConstants.InputState.FirstTouch)
         {
@@ -73,7 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         if(firstTouchForwardDirection == Vector3.zero) return;
         
-        var angleDifference = (InputManager.Instance.LastTouchPosition.x - InputManager.Instance.FirstTouchPosition.x) / 5f;
+        var angleDifference = (InputManager.Instance.LastTouchPosition.x - InputManager.Instance.FirstTouchPosition.x) / 4f;
         
         transform.forward = Quaternion.Euler(0, angleDifference, 0) * firstTouchForwardDirection;
     }
@@ -99,5 +105,14 @@ public class PlayerController : MonoBehaviour
         _rigidbody.angularVelocity = Vector3.zero;
         currentMovementSpeed = 0;
         firstTouchForwardDirection = Vector3.zero;
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish"))
+        {
+            GameManager.Instance.Success();
+        }
     }
 }
