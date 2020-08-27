@@ -110,6 +110,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(GameManager.Instance.GameState != GameConstants.GameState.Playable) return;
+
         if (other.CompareTag("Finish"))
         {
             GameManager.Instance.Success();

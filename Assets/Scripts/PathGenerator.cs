@@ -122,7 +122,7 @@ public class PathGenerator : MonoBehaviour
             {
                 if (sampleCount > 0)
                 {
-                    textComponent.text = sampleCount.ToString();
+                    textComponent.text = (sampleCount - 1).ToString();
                     sampleCount--; 
                 }
             }

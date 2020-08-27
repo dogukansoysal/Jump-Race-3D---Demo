@@ -32,7 +32,8 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(GameManager.Instance.GameState != GameConstants.GameState.Playable) return;
+
         if (Physics.Raycast(transform.position, -transform.up, out hit))
         {
             if (hit.collider.CompareTag("JumpingPad"))
@@ -81,10 +82,13 @@ public class EnemyAI : MonoBehaviour
         {
             _animator.SetTrigger("Backflip");
         }
-        
-        if (Target == hit.transform.gameObject)
+
+        if (Target & hit.transform)
         {
-            isBounced = true;
+            if (Target == hit.transform.gameObject)
+            {
+                isBounced = true;
+            }
         }
     }
     
@@ -107,5 +111,15 @@ public class EnemyAI : MonoBehaviour
     {
         _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
         _rigidbody.angularVelocity = Vector3.zero;
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if(GameManager.Instance.GameState != GameConstants.GameState.Playable) return;
+
+        if (other.CompareTag("Finish"))
+        {
+            GameManager.Instance.Fail();
+        }
     }
 }
