@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         if(firstTouchForwardDirection == Vector3.zero) return;
         
-        var angleDifference = (InputManager.Instance.LastTouchPosition.x - InputManager.Instance.FirstTouchPosition.x) / 4f;
+        var angleDifference = (InputManager.Instance.LastTouchPosition.x - InputManager.Instance.FirstTouchPosition.x) / 3f;
         
         transform.forward = Quaternion.Euler(0, angleDifference, 0) * firstTouchForwardDirection;
     }

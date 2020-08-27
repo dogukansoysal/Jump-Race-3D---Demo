@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour
     [Header("UI Panels")] public List<GameObject> Panels;
     
     //public Image CompleteImage;
-    public Image LogoImage;
+    //public Image LogoImage;
     
 
     // Main Menu
@@ -40,11 +40,11 @@ public class UIController : MonoBehaviour
     {
         HandleScaleTween(TopToPlayTextMenu.GetComponent<RectTransform>());
         
-        //HandleScaleTween(NextLevelTextSuccess.GetComponent<RectTransform>());
+        HandleScaleTween(NextLevelTextSuccess.GetComponent<RectTransform>());
         
-        //SetLevelText(LevelTextMenu.GetComponent<TextMeshProUGUI>());
-        //SetLevelText(LevelTextInGame.GetComponent<TextMeshProUGUI>());
-        //SetLevelText(LevelTextSuccess.GetComponent<TextMeshProUGUI>());
+        SetLevelText(LevelTextMenu.GetComponent<TextMeshProUGUI>());
+        SetLevelText(LevelTextInGame.GetComponent<TextMeshProUGUI>());
+        SetLevelText(LevelTextSuccess.GetComponent<TextMeshProUGUI>());
 
         ShowPanel(0);
     }
@@ -81,7 +81,7 @@ public class UIController : MonoBehaviour
     {
         if (component == null) return;
         
-        var levelIndex = GameManager.Instance.GetCurrentSceneIndex() - 2;
+        var levelIndex = GameManager.Instance.GetCurrentSceneIndex();
         if (levelIndex == 0)
         {
             component.GetComponent<TextMeshProUGUI>().text = "TUTORIAL";
@@ -89,7 +89,7 @@ public class UIController : MonoBehaviour
         }
         else
         {
-            component.GetComponent<TextMeshProUGUI>().text = "LEVEL " + (SceneManager.GetActiveScene().buildIndex - 2);
+            component.GetComponent<TextMeshProUGUI>().text = "LEVEL " + levelIndex;
         }
     }
 

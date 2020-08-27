@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
     // Open Random Scene except Tutorial scene
     public void RandomScene()
     {
-        SceneManager.LoadScene(Random.Range(0, SceneManager.sceneCountInBuildSettings));    // TODO: Set SceneIndex 0 as the Tutorial scene, and ignore it when randomize in the future.
+        SceneManager.LoadScene(Random.Range(1, SceneManager.sceneCountInBuildSettings));    // - DONE - TODO: Set SceneIndex 0 as the Tutorial scene, and ignore it when randomize in the future.
     }
 
 
