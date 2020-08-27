@@ -1149,7 +1149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238ad2870e4569740be106f83d68fc0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxMovementSpeed: 17
+  MaxMovementSpeed: 16
   FallMultiplier: 1.1
 --- !u!1 &4971376161011387666
 GameObject:
