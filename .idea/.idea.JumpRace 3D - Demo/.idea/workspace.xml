@@ -49,9 +49,9 @@
         <option value="$PROJECT_DIR$/Assets/SplineMesh/Scripts/MeshProcessing/SplineMeshTiling.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PathGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/JumpingPad.cs" />
       </list>
     </option>
@@ -99,7 +99,8 @@
       <workItem from="1598087795521" duration="8682000" />
       <workItem from="1598218474751" duration="9047000" />
       <workItem from="1598427078165" duration="9069000" />
-      <workItem from="1598519676249" duration="9872000" />
+      <workItem from="1598519676249" duration="13624000" />
+      <workItem from="1598698768602" duration="3848000" />
     </task>
     <servers />
   </component>

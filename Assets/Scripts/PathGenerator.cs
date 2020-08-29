@@ -127,7 +127,14 @@ public class PathGenerator : MonoBehaviour
                 }
             }
             
-            go.GetComponent<Renderer>().sharedMaterial = Materials[Random.Range(0, Materials.Count)];
+            // Set materials
+            var material = Materials[Random.Range(0, Materials.Count)];
+            for (var i = 0; i < go.transform.GetChild(2).childCount; i++)
+            {
+                go.transform.GetChild(2).GetChild(i).GetComponent<Renderer>().sharedMaterial = material;
+            }
+            
+            
             
             if (distance - spacing > 0)
             {
